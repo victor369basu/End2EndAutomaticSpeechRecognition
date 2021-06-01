@@ -1,10 +1,10 @@
 # End to End Automatic Speech Recognition
-<img align="center" alt="architecture" src="./images/SpeechRecognition.png" /><br>
+<img align="center" alt="architecture" src="./images/speechRecognition.png" /><br>
 
 In this repository, I have developed an end to end Automatic speech recognition project. I have developed the neural network model for automatic speech recognition with PyTorch and used MLflow to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. The Neural Acoustic model is built with reference to the DeepSpeech2 model, but not the exact DeepSpeach2 model or the DeepSpeech model as mentioned in their respective research papers.
 
 ## Technologies used:
-1. MLflow.<img align="left" alt="mlflow" width="26px" src="./images/mlflow.png" /><br>
+1. MLflow.<img align="left" alt="mlflow" width="30px" src="./images/mlflow.png" /><br>
     - to manage the ML lifecycle.
     - to track and compare model performance in the ml lifecyle.
     - experimentation, reproducibility, deployment, and a central model registry.
@@ -14,7 +14,7 @@ In this repository, I have developed an end to end Automatic speech recognition 
 
 ## Speech Recognition Pipeline
 
-<img align="center" alt="architecture1" src="./images/SpeechRecognitionNN.png" /><br>
+<img align="center" alt="architecture1" src="./images/speechRecognitionNN.png" /><br>
 
 ### Dataset
 In this project, the LibriSpeech dataset has been used to train and validate the model. It has audio data for input and text speech for the respective audio to be predicted by our model. Also, I have used a subset of 2000 files from the training and test set of the LibriSpeech dataset for faster training and validation over limited GPU power and usage limit.
@@ -32,7 +32,7 @@ We have used <b>Greedy Decoder</b> which argmax's the output of the Neural Netwo
 
 ## ML Lifecycle Pipeline
 
-<img align="center" alt="architecture2" src="./images/SpeechRecognitionMLflow.png" /><br>
+<img align="center" alt="architecture2" src="./images/speechRecognitionMLflow.png" /><br>
 We start by initializing the mlflow server where we need to specify backend storage, artifact uri, host and the port. Then we create an experiment, start a run within the experiment which inturn tracks the training and validation loss. Then we save the model followed by registring it and further use the registered model for deployment over the production.
 
 ## Implementation
