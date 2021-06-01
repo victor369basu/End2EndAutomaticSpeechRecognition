@@ -4,7 +4,7 @@
 In this repository, I have developed an end to end Automatic speech recognition project. I have developed the neural network model for automatic speech recognition with PyTorch and used MLflow to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. The Neural Acoustic model is built with reference to the DeepSpeech2 model, but not the exact DeepSpeach2 model or the DeepSpeech model as mentioned in their respective research papers.
 
 ## Technologies used:
-1. MLflow.<img align="left" alt="mlflow" width="30px" src="./images/mlflow.png" /><br>
+1. MLflow.<img align="left" alt="mlflow" width="40px" src="./images/mlflow.png" /><br>
     - to manage the ML lifecycle.
     - to track and compare model performance in the ml lifecyle.
     - experimentation, reproducibility, deployment, and a central model registry.
