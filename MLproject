@@ -1,0 +1,89 @@
+name: End2EndSpeechRecognition
+
+conda_env: conda.yaml
+
+entry_points:
+  server:
+    parameters:
+      artifact_root: {type: str, default: './mlruns'}
+      host: {type=str, default: "127.0.0.1"}
+      port: {type=str, default: "5000"}
+      backend_store_uri: {type: str, default: "sqlite:///mlflow.db"}
+
+    command: "python server.py \
+      --backend_store_uri {backend_store_uri} \
+      --artifact_root {artifact_root} \
+      --host {host} \
+      --port {port}
+        "
+  train:
+    parameters: 
+      train: {type: bool, default: True}
+
+      # experiment 
+      experiment_name: {type: str, default: "SpeechRecognition"}
+      registered_model: {type: str, default: "SpeechRecognitionModel"}
+      model_stage: {type: str, default: "Production"}
+      model_version: {type: int, default: 1}
+
+      # Audio pre-processing
+      sampling_rate: {type: int, default: 16000}
+      n_mfcc: {type: int, default: 128}
+
+      # Model Parameters
+      n_cnn_layers: {type: int, default: 2}
+      n_rnn_layers: {type: int, default: 3}
+      rnn_dim: {type: int, default: 800}
+      n_class: {type: int, default: 29}
+      n_feats: {type: int, default: 128}
+      stride: {type: int, default: 2}
+      dropout: {type: float, default: 0.4}
+
+      batch: {type: int, default: 32}
+      alpha: {type: float, default: 0.1}
+      beta1: {type: float, default: 0.0}
+      beta2: {type: float, default: 0.9}
+      learning_rate: {type: float, default: 0.0005}
+      epsilon: {type: float, default: 1e-9}
+      epoch: {type: int, default: 30}
+
+    command: "python main.py \
+      --train {train} \
+      --experiment_name {experiment_name} \
+      --registered_model {registered_model} \
+      --model_stage {model_stage} \
+      --model_version {model_version} \
+      --sampling_rate {sampling_rate} \
+      --n_mfcc {n_mfcc} \
+	  --n_cnn_layers {n_cnn_layers} \
+	  --n_rnn_layers {n_rnn_layers} \
+	  --rnn_dim {rnn_dim} \
+	  --n_class {n_class} \
+	  --n_feats {n_feats} \
+	  --stride {stride} \
+	  --dropout {dropout} \
+	  --batch {batch} \
+	  --alpha {alpha} \
+	  --beta1 {beta1} \
+	  --beta2 {beta2} \
+	  --learning_rate {learning_rate} \
+	  --epsilon {epsilon} \
+	  --epoch {epoch} 
+             " 
+  validate:
+    parameters: 
+      train: {type: bool, default: False}
+
+      registered_model: {type: str, default: "SpeechRecognitionModel"}
+      model_stage: {type: str, default: "Production"}
+      model_version: {type: int, default: 1}
+
+      file_id: {type: str, default: None}
+
+      command: "python main.py \
+      --train {train} \
+      --registered_model {registered_model} \
+      --model_stage {model_stage} \
+      --model_version {model_version} \
+      --file_id {file_id}
+             "

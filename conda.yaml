@@ -1,0 +1,17 @@
+name: End2EndSpeechRecognition
+
+channels:
+  - defaults
+  - pytorch
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.6
+  - pip
+  - pip:
+    - mlflow>=1.0
+    - numpy==1.19.5
+    - pandas==1.1.5
+    - torch==1.8.1
+    - torchaudio==0.8.1
+    - torchvision==0.9.1
