@@ -81,7 +81,7 @@ python main.py --train=False --registered_model=SpeechRecognitionModel --model_s
 ```
 ### Dashboard
 <img align="center" alt="dashboard" src="./images/dashboard.png" /><br>
-### Rregistered model
+### Registered model
 <img align="center" alt="regmodel" src="./images/regmodel.png" /><br>
 ### Artifacts
 <img align="center" alt="artifacts" src="./images/artifacts.png" /><br>
