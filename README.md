@@ -134,6 +134,6 @@ Predicted: bravly ansjenereusly has he btaoled and miy ba hah andthis en morera 
 ```
 ## Future Scopes
 - There are other Neural Network models like Wav2Vec, Jasper which also be used and tested against for better model performance.
-- This is not a realtime automatic speech recognition project, where human speech would be decoded to text in realtime like in Amazon Alexa and Google Assistant. It takes reads audo file as input and returns predicted speech.
-So, this could be taken to further limits by developing it into a real-time automatic speech recognition.
-- The entire project has been done for local deployment. For productionizing the model and datasets AWS s3 bucket and Microsoft Azure could be used, also Kubernetes would also serve as a better option for pructionizing the model.
+- This is not a real-time automatic speech recognition project, where human speech would be decoded to text in real-time like in Amazon Alexa and Google Assistant. It takes reads the audio file as input and returns predicted speech.
+So, this could be taken to further limits by developing it into real-time automatic speech recognition.
+- The entire project has been done for local deployment. For the Productionisation of the model and datasets AWS s3 bucket and Microsoft Azure could be used, Kubernetes would also serve as a better option for the Productionisation of the model.
