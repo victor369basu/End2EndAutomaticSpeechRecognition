@@ -23,7 +23,7 @@ In this project, the LibriSpeech dataset has been used to train and validate the
 In this process Torchaudio has been used to extract the waveform and sampling rate from the audiofile. Then have been used <b>MFCC(Mel-frequency cepstrum coefficients)</b> for feature extraction from the waveform. <b>MelSpectogram</b>, <b>Spectogram</b> and <b>Frequency Masking</b> could also be used in this case for feature exxtraction.
 
 ### Acoustic Model architecture.
-The Neural Network architecture consist of <b>Residul-CNN blocks</b>, <b>BidirectionalGRU blocks</b>, and <b>fully connected Linear layers</b> for final classification. From the input layer, we have two Residual CNN blocks with batch normalization, followed by a fully connected layer, hence connecting it to three bi-directional GRU blocks and finally fully connected linear layers for classification.<br>
+The Neural Network architecture consist of <b>Residul-CNN blocks</b>, <b>BidirectionalGRU blocks</b>, and <b>fully connected Linear layers</b> for final classification. From the input layer, we have two Residual CNN blocks(in sequential) with batch normalization, followed by a fully connected layer, hence connecting it to three bi-directional GRU blocks(in sequential) and finally fully connected linear layers for classification.<br>
 
 CTC(Connectionist Temporal Classification) Loss as the base loss function for our model and AdamW as the optimizer.
 
